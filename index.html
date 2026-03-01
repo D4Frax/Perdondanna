@@ -2,99 +2,193 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>🌸 Hello Kitty Web 🌸</title>
+<title>Hello Kitty & Pompompurin Fanpage 🎀🍮</title>
 
 <style>
 body{
-  background: linear-gradient(135deg, #ffd6e8, #fff0f6);
+  margin:0;
+  background: linear-gradient(135deg, #ffd6eb, #fff7cc);
   font-family: "Comic Sans MS", cursive;
-  color:#ff4d88;
+  color:#ff4d94;
   text-align:center;
-  padding:20px;
+  overflow-x:hidden;
 }
 
-h1, h2{
-  color:#ff1493;
-  text-shadow:2px 2px #fff;
+/* Animaciones */
+@keyframes float {
+  0%{transform: translateY(0);}
+  50%{transform: translateY(-15px);}
+  100%{transform: translateY(0);}
 }
 
-.section{
-  background:white;
-  border-radius:25px;
-  padding:20px;
-  margin:20px auto;
-  max-width:900px;
+@keyframes spin {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+@keyframes hearts {
+  0%{transform: translateY(0); opacity:1;}
+  100%{transform: translateY(-100vh); opacity:0;}
+}
+
+/* Header */
+header{
+  background:#ffe6f2;
+  padding:30px 15px;
   box-shadow:0 5px 15px rgba(255,105,180,0.4);
 }
 
-table{
+header h1{
+  font-size:2.6em;
+  color:#ff1493;
+  text-shadow:3px 3px white;
+}
+
+/* Secciones */
+.section{
+  padding:35px 15px;
+}
+
+/* Galería GIF */
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap:20px;
+  max-width:900px;
+  margin:auto;
+}
+
+.gallery img{
   width:100%;
+  border-radius:25px;
+  box-shadow:0 8px 18px rgba(255,105,180,0.5);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* GIFs decorativos */
+.floating{
+  position:fixed;
+  width:90px;
+  animation: float 4s infinite;
+  z-index:10;
+}
+
+.spin{
+  animation: spin 12s linear infinite;
+}
+
+/* Tabla */
+table{
+  width:92%;
+  max-width:900px;
+  margin:40px auto;
+  background:white;
+  border-radius:25px;
   border-collapse:collapse;
+  box-shadow:0 8px 18px rgba(255,105,180,0.4);
+  overflow:hidden;
 }
 
 th, td{
-  border:2px dashed #ff99cc;
   padding:15px;
-  font-size:16px;
+  border:2px dashed #ff99cc;
 }
 
 th{
-  background:#ffe6f0;
+  background:#ffe6f2;
+  font-size:1.2em;
 }
 
-.footer{
-  margin-top:30px;
-  font-size:14px;
+/* Texto final */
+.final-text{
+  margin:70px 10px 90px;
+  font-size:3.2em;
+  color:#ff1493;
+  text-shadow:4px 4px white;
+  animation: float 2.5s infinite;
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .final-text{
+    font-size:2.2em;
+  }
+}
+
+/* Corazones */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:24px;
+  animation: hearts 6s linear infinite;
 }
 </style>
 </head>
 
 <body>
 
-<h1>🎀 Bienvenido a la Página Hello Kitty 🎀</h1>
-<p>Esta página fue creada desde el celular y con amor rosita 💖</p>
+<!-- 🎵 SONIDO CUTE -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_5c7b2c4c92.mp3" type="audio/mpeg">
+</audio>
+
+<!-- GIFs flotantes -->
+<img class="floating spin" style="top:20px; left:10px;"
+src="https://media.tenor.com/zJ5Zq7q0gYIAAAAC/hello-kitty.gif">
+
+<img class="floating" style="top:80px; right:15px;"
+src="https://media.tenor.com/9QX6Z7zX9oEAAAAC/pompompurin.gif">
+
+<header>
+  <h1>🎀 Hello Kitty & Pompompurin Fanpage 🎀🍮</h1>
+</header>
 
 <div class="section">
-<h2>💬 Si Danna habla conmigo…</h2>
-
-<table>
-<tr>
-<th>🌈 Ventajas</th>
-<th>💀 Desventajas</th>
-</tr>
-
-<tr>
-<td>
-✨ Hello Kitty estará orgullosa<br>
-🍮 Pompopurin estará alegre<br>
-📺 Saldrá otra temporada de <b>[Smiling Friends](chatgpt://generic-entity?number=3)</b><br>
-🌸 El universo se vuelve rosita<br>
-🎀 Nyancat sonríe desde el cielo
-</td>
-
-<td>
-😨 Se te caerá un dedo<br>
-🌍 Se acaba el mundo lentamente<br>
-😿 Hello Kitty estará triste<br>
-🐰 Van a quitar las fourloko<br>
-⚠️ El WiFi fallará por 3 días
-</td>
-</tr>
-</table>
+  <h2>💖 Galería Super Cute 💖</h2>
+  <div class="gallery">
+    <img src="https://media.tenor.com/kHcmsxlKHEAAAAAC/hello-kitty-love.gif">
+    <img src="https://media.tenor.com/dsJYzJ1KqQAAAAAC/pompompurin-hug.gif">
+    <img src="https://media.tenor.com/3A6Gd5Z7b_0AAAAC/hello-kitty-cute.gif">
+    <img src="https://media.tenor.com/6FQ9p6L6Qj8AAAAC/pompompurin-cute.gif">
+  </div>
 </div>
 
 <div class="section">
-<h2>🌸 Mensaje especial</h2>
-<p>
-Si llegaste hasta aquí, Hello Kitty te manda un abrazo 🐱💗<br>
-Todo es mejor cuando es rosita ✨
-</p>
+  <h2>🎀 Si Danna habla conmigo… 🎀</h2>
+  <table>
+    <tr>
+      <th>🌸 Ventajas</th>
+      <th>💀 Desventajas</th>
+    </tr>
+    <tr>
+      <td>
+        Hello Kitty estará orgullosa 🐱💗<br>
+        Pompompurin saltará de felicidad 🍮<br>
+        Todo será rosita 🌸<br>
+        El mundo será cute ✨<br>
+        Sanrio sonríe 💕
+      </td>
+      <td>
+        Se cae un dedo 😨<br>
+        El mundo colapsa 🌍<br>
+        Hello Kitty llora 😿<br>
+        Pompompurin se deprime 🍮💔<br>
+        El WiFi desaparece ⚠️
+      </td>
+    </tr>
+  </table>
 </div>
 
-<div class="footer">
-🎀 Página 100% temática Hello Kitty <br>
-Hecha gratis desde el celular 📱
+<div class="final-text">
+💕 TEKIERO MUSHO MI LOBA 💕
 </div>
+
+<!-- Corazones flotando -->
+<span class="heart" style="left:10%">💖</span>
+<span class="heart" style="left:30%; animation-delay:1s;">🎀</span>
+<span class="heart" style="left:50%; animation-delay:2s;">💗</span>
+<span class="heart" style="left:70%; animation-delay:3s;">🍮</span>
+<span class="heart" style="left:90%; animation-delay:4s;">🐱</span>
 
 </body>
 </html>
