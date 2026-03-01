@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Hello Kitty & Pompompurin Fanpage 🎀🍮</title>
+<title>Hablemos mi loba 💕</title>
 
 <style>
 body{
@@ -17,64 +17,39 @@ body{
 /* Animaciones */
 @keyframes float {
   0%{transform: translateY(0);}
-  50%{transform: translateY(-15px);}
+  50%{transform: translateY(-18px);}
   100%{transform: translateY(0);}
-}
-
-@keyframes spin {
-  from{transform: rotate(0deg);}
-  to{transform: rotate(360deg);}
 }
 
 @keyframes hearts {
   0%{transform: translateY(0); opacity:1;}
-  100%{transform: translateY(-100vh); opacity:0;}
+  100%{transform: translateY(-120vh); opacity:0;}
 }
 
 /* Header */
 header{
   background:#ffe6f2;
-  padding:30px 15px;
+  padding:25px 15px;
   box-shadow:0 5px 15px rgba(255,105,180,0.4);
 }
 
 header h1{
-  font-size:2.6em;
+  font-size:2.2em;
   color:#ff1493;
   text-shadow:3px 3px white;
+  line-height:1.3;
 }
 
-/* Secciones */
-.section{
-  padding:35px 15px;
-}
-
-/* Galería GIF */
-.gallery{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap:20px;
-  max-width:900px;
-  margin:auto;
-}
-
-.gallery img{
-  width:100%;
+/* GIFs y fotos */
+img{
   border-radius:25px;
   box-shadow:0 8px 18px rgba(255,105,180,0.5);
   animation: float 3s ease-in-out infinite;
 }
 
-/* GIFs decorativos */
-.floating{
-  position:fixed;
-  width:90px;
-  animation: float 4s infinite;
-  z-index:10;
-}
-
-.spin{
-  animation: spin 12s linear infinite;
+.random{
+  width:160px;
+  margin:15px;
 }
 
 /* Tabla */
@@ -101,25 +76,36 @@ th{
 
 /* Texto final */
 .final-text{
-  margin:70px 10px 90px;
-  font-size:3.2em;
+  margin:60px 10px 20px;
+  font-size:3em;
+  font-family: Arial, Helvetica, sans-serif;
   color:#ff1493;
-  text-shadow:4px 4px white;
-  animation: float 2.5s infinite;
+  text-shadow:3px 3px white;
+}
+
+/* Botón sonido */
+button{
+  background:#ffb6d9;
+  border:none;
+  padding:12px 20px;
+  border-radius:20px;
+  font-size:16px;
+  color:#fff;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(255,105,180,0.4);
 }
 
 /* Responsive */
 @media(max-width:600px){
-  .final-text{
-    font-size:2.2em;
-  }
+  .final-text{font-size:2.1em;}
+  .random{width:130px;}
 }
 
 /* Corazones */
 .heart{
   position:fixed;
   bottom:-20px;
-  font-size:24px;
+  font-size:22px;
   animation: hearts 6s linear infinite;
 }
 </style>
@@ -128,67 +114,79 @@ th{
 <body>
 
 <!-- 🎵 SONIDO CUTE -->
-<audio autoplay loop>
+<audio id="music" loop>
   <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_5c7b2c4c92.mp3" type="audio/mpeg">
 </audio>
 
-<!-- GIFs flotantes -->
-<img class="floating spin" style="top:20px; left:10px;"
-src="https://media.tenor.com/zJ5Zq7q0gYIAAAAC/hello-kitty.gif">
-
-<img class="floating" style="top:80px; right:15px;"
-src="https://media.tenor.com/9QX6Z7zX9oEAAAAC/pompompurin.gif">
-
 <header>
-  <h1>🎀 Hello Kitty & Pompompurin Fanpage 🎀🍮</h1>
+  <h1>
+    💕 Hablemos mi loba, hermosa, preciosa, bella, guapa, única, perfecta,
+    maravillosa, divina, increíble, espectacular, mi todo 💕
+  </h1>
+
+  <button onclick="document.getElementById('music').play()">
+    🎀 Activar musiquita cute 🎀
+  </button>
 </header>
 
-<div class="section">
-  <h2>💖 Galería Super Cute 💖</h2>
-  <div class="gallery">
-    <img src="https://media.tenor.com/kHcmsxlKHEAAAAAC/hello-kitty-love.gif">
-    <img src="https://media.tenor.com/dsJYzJ1KqQAAAAAC/pompompurin-hug.gif">
-    <img src="https://media.tenor.com/3A6Gd5Z7b_0AAAAC/hello-kitty-cute.gif">
-    <img src="https://media.tenor.com/6FQ9p6L6Qj8AAAAC/pompompurin-cute.gif">
-  </div>
-</div>
+<!-- GIFs y fotos POR TODOS LADOS -->
 
-<div class="section">
-  <h2>🎀 Si Danna habla conmigo… 🎀</h2>
-  <table>
-    <tr>
-      <th>🌸 Ventajas</th>
-      <th>💀 Desventajas</th>
-    </tr>
-    <tr>
-      <td>
-        Hello Kitty estará orgullosa 🐱💗<br>
-        Pompompurin saltará de felicidad 🍮<br>
-        Todo será rosita 🌸<br>
-        El mundo será cute ✨<br>
-        Sanrio sonríe 💕
-      </td>
-      <td>
-        Se cae un dedo 😨<br>
-        El mundo colapsa 🌍<br>
-        Hello Kitty llora 😿<br>
-        Pompompurin se deprime 🍮💔<br>
-        El WiFi desaparece ⚠️
-      </td>
-    </tr>
-  </table>
-</div>
+<img class="random" src="https://media.tenor.com/zJ5Zq7q0gYIAAAAC/hello-kitty.gif">
+<img class="random" src="https://media.tenor.com/9QX6Z7zX9oEAAAAC/pompompurin.gif">
 
+<!-- Lobos pareja humanizados -->
+<img class="random" src="https://i.pinimg.com/736x/8e/4c/8f/8e4c8f7f3c6d4c9c9a0f6d7c4b7b7c8e.jpg">
+<img class="random" src="https://i.pinimg.com/736x/ab/1e/64/ab1e64b6b5f52c3a0a5c6d2a2a9a0f8f.jpg">
+
+<img class="random" src="https://media.tenor.com/kHcmsxlKHEAAAAAC/hello-kitty-love.gif">
+<img class="random" src="https://media.tenor.com/dsJYzJ1KqQAAAAAC/pompompurin-hug.gif">
+
+<!-- Tabla -->
+<table>
+<tr>
+<th>🌸 Ventajas</th>
+<th>💀 Desventajas</th>
+</tr>
+
+<tr>
+<td>
+Hello Kitty estará orgullosa 🐱💗<br>
+Pompompurin estará feliz 🍮<br>
+Tendrás Four Lokos ilimitadas 🍻<br>
+Te amaré más que Misa a Light 🖤<br>
+Vas a ser pro en todo lo que hagas 💪✨<br>
+Vamos a terminar el manga de Stage Love juntos 📖💕
+</td>
+
+<td>
+Se té caerá un dedo 😨<br>
+El mundo se acaba 🌍<br>
+Hello Kitty llora 😿<br>
+Misa va a estar triste 🖤😢<br>
+Smiling Friends no sacará otra temporada 📺💔
+</td>
+</tr>
+</table>
+
+<!-- TEXTO FINAL -->
 <div class="final-text">
-💕 TEKIERO MUSHO MI LOBA 💕
+💖 TEKIERO MUSHO MI LOBA 💖
 </div>
 
-<!-- Corazones flotando -->
+<!-- JoJo -->
+<img class="random" src="https://i.pinimg.com/736x/4d/6e/3a/4d6e3a4f1a0b6c8e2b8f9c5e7f6b9a1c.jpg">
+
+<p>
+💕 <b>[Jonathan Joestar](chatgpt://generic-entity?number=0)</b> y 
+<b>[Erina Pendleton](chatgpt://generic-entity?number=1)</b> 💕
+</p>
+
+<!-- Corazones -->
 <span class="heart" style="left:10%">💖</span>
 <span class="heart" style="left:30%; animation-delay:1s;">🎀</span>
 <span class="heart" style="left:50%; animation-delay:2s;">💗</span>
 <span class="heart" style="left:70%; animation-delay:3s;">🍮</span>
-<span class="heart" style="left:90%; animation-delay:4s;">🐱</span>
+<span class="heart" style="left:90%; animation-delay:4s;">🐺</span>
 
 </body>
 </html>
