@@ -2,205 +2,115 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hablemos mi loba 💖</title>
 
 <style>
-body{
+html, body{
   margin:0;
+  padding:0;
+  height:100%;
+  overflow:hidden; /* 🔴 SIN SCROLL */
+}
+
+body{
   background:linear-gradient(135deg,#ffd6eb,#fff0c9);
   font-family:"Comic Sans MS", cursive;
   color:#ff4d94;
   text-align:center;
-}
-
-/* ===== CONTENEDOR GENERAL ===== */
-.page{
-  position:relative;
-  min-height:3000px; /* más grande para scroll */
-  overflow:hidden;
+  display:flex;
+  flex-direction:column;
 }
 
 /* ===== HEADER ===== */
 header{
   background:#ffe6f2;
-  padding:25px 15px;
-  box-shadow:0 6px 15px rgba(255,105,180,.4);
-  position:relative;
-  z-index:5;
+  padding:12px 10px;
+  box-shadow:0 4px 10px rgba(255,105,180,.4);
 }
 
 header h1{
-  font-size:2em;
+  font-size:1.2em;
   color:#ff1493;
-  text-shadow:3px 3px white;
+  text-shadow:2px 2px white;
+  margin:6px 0;
 }
 
 /* ===== BOTONES ===== */
 button{
   background:#ffb6d9;
   border:none;
-  padding:14px 22px;
-  border-radius:22px;
-  font-size:16px;
+  padding:10px 16px;
+  border-radius:20px;
+  font-size:14px;
   color:white;
-  margin:8px;
+  margin:4px;
 }
 
-/* ===== COLLAGE ===== */
-.collage{
-  position:absolute;
-  top:0;
-  left:0;
+/* ===== COLLAGE GRID ===== */
+.collage-grid{
+  flex:1; /* ocupa toda la pantalla restante */
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap:6px;
+  padding:6px;
+}
+
+.collage-grid img{
   width:100%;
-  height:3000px;
-  z-index:1;
+  height:100%;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:0 6px 14px rgba(255,105,180,.4);
 }
 
-.collage img{
-  position:absolute;
-  width:250px; /* más grande */
-  opacity:0.35;
-  border-radius:25px;
-}
-
-/* ===== CONTENIDO ===== */
-.content{
-  position:relative;
-  z-index:5;
-}
-
-table{
-  width:90%;
-  max-width:900px;
-  margin:100px auto;
-  background:white;
-  border-radius:25px;
-  border-collapse:collapse;
-  box-shadow:0 8px 20px rgba(255,105,180,.4);
-}
-
-th,td{
-  padding:15px;
-  border:2px dashed #ff99cc;
-}
-
-th{
-  background:#ffe6f2;
-}
-
+/* ===== TEXTO FINAL ===== */
 .big-text{
-  font-size:3.5em; /* más grande */
+  font-size:1.6em;
   font-family:Arial, Helvetica, sans-serif;
   color:#ff1493;
-  text-shadow:3px 3px white;
-  margin:80px 10px 30px;
-}
-
-.main-img{
-  width:220px; /* más grande */
-  border-radius:25px;
-  box-shadow:0 8px 18px rgba(255,105,180,.5);
-}
-
-.caption{
-  font-size:1.3em;
-  margin:15px 0 40px;
+  text-shadow:2px 2px white;
+  padding:6px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- 🎵 MÚSICA CUTE -->
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/audio/2023/05/09/audio_5c8c8b9c7a.mp3">
+  <source src="https://cdn.pixabay.com/audio/2023/05/09/audio_5c8c8b9c7a.mp3" type="audio/mpeg">
 </audio>
-
-<div class="page">
 
 <header>
   <h1>
-    💕 Hablemos mi loba, hermosa, preciosa, bella, guapa,
-    única, perfecta, maravillosa, divina, increíble 💕
+    💕 Hablemos mi loba, hermosa, preciosa, bella, guapa, única, perfecta 💕
   </h1>
   <button onclick="document.getElementById('music').play()">▶️ Play música cute</button>
   <button onclick="document.getElementById('music').pause()">⏸️ Pause</button>
 </header>
 
-<!-- ===== COLLAGE DE IMÁGENES (TODAS VISIBLES) ===== -->
-<div class="collage">
+<!-- 🧩 COLLAGE (TODAS VISIBLES, SIN SCROLL) -->
+<div class="collage-grid">
 
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10"
-       style="top:120px; left:10px;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20ttF_rOdn9dE4L-29flh7lQooFx_m9QyRg&s">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuDm_5qYTx6j62OCovNE-p0EySYgVqM8A7g&s">
+  <img src="https://images7.memedroid.com/images/UPLOADED699/66b10425726c4.jpeg">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmlON7SO6W5q4eWfCtau9PJDfHiJ01np6Lam6zyieYrA&s=10">
+  <img src="https://static.wikia.nocookie.net/pucca/images/5/58/Index-3--1-.jpg">
+  <img src="https://i.pinimg.com/originals/37/8a/41/378a41878003b34352270be8b2b360c5.jpg">
+  <img src="https://i.pinimg.com/736x/3d/c9/d5/3dc9d545c2e8c3a9e254222e7a551cf3.jpg">
+  <img src="https://i.redd.it/x0agoktumxdf1.jpeg">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
 
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20ttF_rOdn9dE4L-29flh7lQooFx_m9QyRg&s"
-       style="top:350px; right:20px;">
-
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuDm_5qYTx6j62OCovNE-p0EySYgVqM8A7g&s"
-       style="top:650px; left:40px;">
-
-  <img src="https://images7.memedroid.com/images/UPLOADED699/66b10425726c4.jpeg"
-       style="top:950px; right:50px;">
-
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s"
-       style="top:1250px; left:30px;">
-
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmlON7SO6W5q4eWfCtau9PJDfHiJ01np6Lam6zyieYrA&s=10"
-       style="top:1550px; right:30px;">
-
-  <img src="https://static.wikia.nocookie.net/pucca/images/5/58/Index-3--1-.jpg/revision/latest/scale-to-width-down/340"
-       style="top:1850px; left:50px;">
-
-  <img src="https://i.pinimg.com/originals/37/8a/41/378a41878003b34352270be8b2b360c5.jpg"
-       style="top:2150px; right:40px;">
-
-  <img src="https://i.pinimg.com/736x/3d/c9/d5/3dc9d545c2e8c3a9e254222e7a551cf3.jpg"
-       style="top:2450px; left:20px;">
-
-  <img src="https://i.redd.it/x0agoktumxdf1.jpeg"
-       style="top:2650px; right:60px;">
-</div>
-
-<!-- ===== CONTENIDO ===== -->
-<div class="content">
-
-<table>
-<tr>
-<th>🌸 Ventajas</th>
-<th>💀 Desventajas</th>
-</tr>
-<tr>
-<td>
-Hello Kitty estará orgullosa 🐱💗<br>
-Pompompurin estará alegre 🍮<br>
-Tendrás Four Lokos ilimitadas 🍻<br>
-Te amaré más que Misa a Light 🖤<br>
-Vas a ser pro en todo lo que hagas 💪✨<br>
-Vamos a terminar Stage Love juntos 📖💕
-</td>
-<td>
-Se te caerá un dedo 😨<br>
-El mundo se acaba 🌍<br>
-Hello Kitty estará triste 😿<br>
-Misa va a estar triste 🖤😢<br>
-Smiling Friends no tendrá otra temporada 💔
-</td>
-</tr>
-</table>
-
-<img class="main-img"
-src="https://i.redd.it/x0agoktumxdf1.jpeg">
-<div class="caption">
-💔 así nos ve Pompompurin cada que peleamos 💔
 </div>
 
 <div class="big-text">
 💖 TEKIERO MUSHO MI LOBA 💖
-</div>
-
-<img class="main-img"
-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
-
-</div>
 </div>
 
 </body>
