@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -10,64 +10,63 @@ html, body{
   margin:0;
   padding:0;
   height:100%;
-  overflow:hidden; /* 🔴 SIN SCROLL */
+  overflow:hidden;
 }
 
 body{
   background:linear-gradient(135deg,#ffd6eb,#fff0c9);
   font-family:"Comic Sans MS", cursive;
-  color:#ff4d94;
-  text-align:center;
   display:flex;
   flex-direction:column;
+  text-align:center;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   background:#ffe6f2;
-  padding:12px 10px;
-  box-shadow:0 4px 10px rgba(255,105,180,.4);
+  padding:8px;
+  box-shadow:0 3px 8px rgba(255,105,180,.4);
 }
 
 header h1{
-  font-size:1.2em;
+  font-size:1em;
   color:#ff1493;
-  text-shadow:2px 2px white;
-  margin:6px 0;
+  margin:4px 0;
 }
 
-/* ===== BOTONES ===== */
+/* BOTONES */
 button{
   background:#ffb6d9;
   border:none;
-  padding:10px 16px;
-  border-radius:20px;
-  font-size:14px;
+  padding:6px 12px;
+  border-radius:18px;
+  font-size:12px;
   color:white;
-  margin:4px;
+  margin:3px;
 }
 
-/* ===== COLLAGE GRID ===== */
+/* COLLAGE */
 .collage-grid{
-  flex:1; /* ocupa toda la pantalla restante */
+  flex:1;
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 🔹 más columnas = imágenes más pequeñas */
   grid-template-rows: repeat(4, 1fr);
-  gap:6px;
-  padding:6px;
+  gap:5px;
+  padding:5px;
 }
 
 .collage-grid img{
   width:100%;
   height:100%;
-  object-fit:cover;
-  border-radius:18px;
-  box-shadow:0 6px 14px rgba(255,105,180,.4);
+  object-fit:contain; /* 🔹 evita que se vean enormes */
+  border-radius:14px;
+  background:#fff5fa;
+  box-shadow:0 4px 10px rgba(255,105,180,.35);
 }
 
-/* ===== TEXTO FINAL ===== */
+/* TEXTO FINAL */
 .big-text{
-  font-size:1.6em;
+  font-size:1.3em;
   font-family:Arial, Helvetica, sans-serif;
   color:#ff1493;
   text-shadow:2px 2px white;
@@ -78,34 +77,34 @@ button{
 
 <body>
 
-<!-- 🎵 MÚSICA CUTE -->
+<!-- MÚSICA -->
 <audio id="music" loop>
   <source src="https://cdn.pixabay.com/audio/2023/05/09/audio_5c8c8b9c7a.mp3" type="audio/mpeg">
 </audio>
 
 <header>
   <h1>
-    💕 Hablemos mi loba, hermosa, preciosa, bella, guapa, única, perfecta 💕
+    💕 Hablemos mi loba, hermosa, preciosa, bella, guapa, única 💕
   </h1>
-  <button onclick="document.getElementById('music').play()">▶️ Play música cute</button>
-  <button onclick="document.getElementById('music').pause()">⏸️ Pause</button>
+  <button onclick="document.getElementById('music').play()">▶️ Música cute</button>
+  <button onclick="document.getElementById('music').pause()">⏸️ Pausar</button>
 </header>
 
-<!-- 🧩 COLLAGE (TODAS VISIBLES, SIN SCROLL) -->
+<!-- IMÁGENES -->
 <div class="collage-grid">
 
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20ttF_rOdn9dE4L-29flh7lQooFx_m9QyRg&s">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuDm_5qYTx6j62OCovNE-p0EySYgVqM8A7g&s">
-  <img src="https://images7.memedroid.com/images/UPLOADED699/66b10425726c4.jpeg">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmlON7SO6W5q4eWfCtau9PJDfHiJ01np6Lam6zyieYrA&s=10">
-  <img src="https://static.wikia.nocookie.net/pucca/images/5/58/Index-3--1-.jpg">
-  <img src="https://i.pinimg.com/originals/37/8a/41/378a41878003b34352270be8b2b360c5.jpg">
-  <img src="https://i.pinimg.com/736x/3d/c9/d5/3dc9d545c2e8c3a9e254222e7a551cf3.jpg">
-  <img src="https://i.redd.it/x0agoktumxdf1.jpeg">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20ttF_rOdn9dE4L-29flh7lQooFx_m9QyRg&s">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuDm_5qYTx6j62OCovNE-p0EySYgVqM8A7g&s">
+<img src="https://images7.memedroid.com/images/UPLOADED699/66b10425726c4.jpeg">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmlON7SO6W5q4eWfCtau9PJDfHiJ01np6Lam6zyieYrA&s=10">
+<img src="https://static.wikia.nocookie.net/pucca/images/5/58/Index-3--1-.jpg">
+<img src="https://i.pinimg.com/originals/37/8a/41/378a41878003b34352270be8b2b360c5.jpg">
+<img src="https://i.pinimg.com/736x/3d/c9/d5/3dc9d545c2e8c3a9e254222e7a551cf3.jpg">
+<img src="https://i.redd.it/x0agoktumxdf1.jpeg">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
 
 </div>
 
@@ -114,4 +113,4 @@ button{
 </div>
 
 </body>
-</html>
+</html> 
