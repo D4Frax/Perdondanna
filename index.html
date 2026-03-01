@@ -14,19 +14,12 @@ body{
   overflow-x:hidden;
 }
 
-/* Animaciones */
 @keyframes float {
   0%{transform: translateY(0);}
-  50%{transform: translateY(-18px);}
+  50%{transform: translateY(-15px);}
   100%{transform: translateY(0);}
 }
 
-@keyframes hearts {
-  0%{transform: translateY(0); opacity:1;}
-  100%{transform: translateY(-120vh); opacity:0;}
-}
-
-/* Header */
 header{
   background:#ffe6f2;
   padding:25px 15px;
@@ -34,25 +27,30 @@ header{
 }
 
 header h1{
-  font-size:2.2em;
+  font-size:2.1em;
   color:#ff1493;
   text-shadow:3px 3px white;
   line-height:1.3;
 }
 
-/* GIFs y fotos */
-img{
-  border-radius:25px;
-  box-shadow:0 8px 18px rgba(255,105,180,0.5);
-  animation: float 3s ease-in-out infinite;
+button{
+  background:#ffb6d9;
+  border:none;
+  padding:12px 20px;
+  border-radius:20px;
+  font-size:16px;
+  color:white;
+  cursor:pointer;
 }
 
-.random{
+img{
   width:160px;
   margin:15px;
+  border-radius:25px;
+  box-shadow:0 8px 18px rgba(255,105,180,0.5);
+  animation: float 3s infinite;
 }
 
-/* Tabla */
 table{
   width:92%;
   max-width:900px;
@@ -74,39 +72,22 @@ th{
   font-size:1.2em;
 }
 
-/* Texto final */
-.final-text{
-  margin:60px 10px 20px;
+.big-text{
   font-size:3em;
   font-family: Arial, Helvetica, sans-serif;
   color:#ff1493;
   text-shadow:3px 3px white;
+  margin:60px 10px 20px;
 }
 
-/* Botón sonido */
-button{
-  background:#ffb6d9;
-  border:none;
-  padding:12px 20px;
-  border-radius:20px;
-  font-size:16px;
-  color:#fff;
-  cursor:pointer;
-  box-shadow:0 4px 10px rgba(255,105,180,0.4);
+.caption{
+  font-size:1.2em;
+  margin-top:10px;
 }
 
-/* Responsive */
 @media(max-width:600px){
-  .final-text{font-size:2.1em;}
-  .random{width:130px;}
-}
-
-/* Corazones */
-.heart{
-  position:fixed;
-  bottom:-20px;
-  font-size:22px;
-  animation: hearts 6s linear infinite;
+  img{width:130px;}
+  .big-text{font-size:2.1em;}
 }
 </style>
 </head>
@@ -120,8 +101,8 @@ button{
 
 <header>
   <h1>
-    💕 Hablemos mi loba, hermosa, preciosa, bella, guapa, única, perfecta,
-    maravillosa, divina, increíble, espectacular, mi todo 💕
+    💕 Hablemos mi loba, hermosa, preciosa, bella, guapa, única,
+    perfecta, maravillosa, divina, increíble, espectacular 💕
   </h1>
 
   <button onclick="document.getElementById('music').play()">
@@ -129,25 +110,21 @@ button{
   </button>
 </header>
 
-<!-- GIFs y fotos POR TODOS LADOS -->
+<!-- IMÁGENES DESORDENADAS (TODAS LAS QUE MANDASTE) -->
+<img src="https://i.pinimg.com/736x/78/8b/65/788b65368d926a323624cea432a3a891.jpg">
+<img src="https://i.pinimg.com/originals/ee/fb/29/eefb29cc372350678e493e09d446f940.jpg">
+<img src="https://pin.it/60QaVDzNx">
+<img src="https://pin.it/55gNJK3Pq">
+<img src="https://pin.it/28fc4z344">
+<img src="https://pin.it/MNFAo6Xc7">
+<img src="https://pin.it/103nJf9Ia">
 
-<img class="random" src="https://media.tenor.com/zJ5Zq7q0gYIAAAAC/hello-kitty.gif">
-<img class="random" src="https://media.tenor.com/9QX6Z7zX9oEAAAAC/pompompurin.gif">
-
-<!-- Lobos pareja humanizados -->
-<img class="random" src="https://i.pinimg.com/736x/8e/4c/8f/8e4c8f7f3c6d4c9c9a0f6d7c4b7b7c8e.jpg">
-<img class="random" src="https://i.pinimg.com/736x/ab/1e/64/ab1e64b6b5f52c3a0a5c6d2a2a9a0f8f.jpg">
-
-<img class="random" src="https://media.tenor.com/kHcmsxlKHEAAAAAC/hello-kitty-love.gif">
-<img class="random" src="https://media.tenor.com/dsJYzJ1KqQAAAAAC/pompompurin-hug.gif">
-
-<!-- Tabla -->
+<!-- TABLA (SE MANTIENE) -->
 <table>
 <tr>
 <th>🌸 Ventajas</th>
 <th>💀 Desventajas</th>
 </tr>
-
 <tr>
 <td>
 Hello Kitty estará orgullosa 🐱💗<br>
@@ -157,36 +134,36 @@ Te amaré más que Misa a Light 🖤<br>
 Vas a ser pro en todo lo que hagas 💪✨<br>
 Vamos a terminar el manga de Stage Love juntos 📖💕
 </td>
-
 <td>
-Se té caerá un dedo 😨<br>
+Se te caerá un dedo 😨<br>
 El mundo se acaba 🌍<br>
 Hello Kitty llora 😿<br>
 Misa va a estar triste 🖤😢<br>
-Smiling Friends no sacará otra temporada 📺💔
+Smiling Friends no va a sacar otra temporada 📺💔
 </td>
 </tr>
 </table>
 
+<!-- IMAGEN CON TEXTO ESPECÍFICO -->
+<div>
+  <img src="https://pin.it/56afXdgqj">
+  <div class="caption">
+    💔 así nos ve Pompompurin cada que peleamos 💔
+  </div>
+</div>
+
 <!-- TEXTO FINAL -->
-<div class="final-text">
+<div class="big-text">
 💖 TEKIERO MUSHO MI LOBA 💖
 </div>
 
-<!-- JoJo -->
-<img class="random" src="https://i.pinimg.com/736x/4d/6e/3a/4d6e3a4f1a0b6c8e2b8f9c5e7f6b9a1c.jpg">
+<!-- FINAL: JONATHAN Y ERINA -->
+<img src="https://pin.it/6B3O4GrfB">
 
 <p>
-💕 <b>[Jonathan Joestar](chatgpt://generic-entity?number=0)</b> y 
+💕 <b>[Jonathan Joestar](chatgpt://generic-entity?number=0)</b> y
 <b>[Erina Pendleton](chatgpt://generic-entity?number=1)</b> 💕
 </p>
-
-<!-- Corazones -->
-<span class="heart" style="left:10%">💖</span>
-<span class="heart" style="left:30%; animation-delay:1s;">🎀</span>
-<span class="heart" style="left:50%; animation-delay:2s;">💗</span>
-<span class="heart" style="left:70%; animation-delay:3s;">🍮</span>
-<span class="heart" style="left:90%; animation-delay:4s;">🐺</span>
 
 </body>
 </html>
