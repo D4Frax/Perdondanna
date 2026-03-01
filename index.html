@@ -7,14 +7,20 @@
 <style>
 body{
   margin:0;
-  background: linear-gradient(135deg,#ffd6eb,#fff1b8);
+  background:linear-gradient(135deg,#ffd6eb,#fff0c9);
   font-family:"Comic Sans MS", cursive;
   color:#ff4d94;
   text-align:center;
-  overflow-x:hidden;
 }
 
-/* ---------------- HEADER ---------------- */
+/* ===== CONTENEDOR GENERAL ===== */
+.page{
+  position:relative;
+  min-height:2600px; /* CLAVE */
+  overflow:hidden;
+}
+
+/* ===== HEADER ===== */
 header{
   background:#ffe6f2;
   padding:25px 15px;
@@ -24,13 +30,12 @@ header{
 }
 
 header h1{
-  font-size:2.1em;
+  font-size:2em;
   color:#ff1493;
   text-shadow:3px 3px white;
-  line-height:1.35;
 }
 
-/* ---------------- BOTONES ---------------- */
+/* ===== BOTONES ===== */
 button{
   background:#ffb6d9;
   border:none;
@@ -38,46 +43,40 @@ button{
   border-radius:22px;
   font-size:16px;
   color:white;
-  cursor:pointer;
   margin:8px;
 }
 
-/* ---------------- COLLAGE ---------------- */
+/* ===== COLLAGE ===== */
 .collage{
   position:absolute;
   top:0;
   left:0;
   width:100%;
-  height:2200px;
+  height:2600px;
   z-index:1;
-  pointer-events:none;
 }
 
 .collage img{
   position:absolute;
   width:160px;
-  border-radius:25px;
   opacity:0.35;
+  border-radius:25px;
 }
 
-/* ---------------- TABLA ---------------- */
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.03);}
-  100%{transform:scale(1);}
+/* ===== CONTENIDO ===== */
+.content{
+  position:relative;
+  z-index:5;
 }
 
 table{
-  width:92%;
+  width:90%;
   max-width:900px;
-  margin:60px auto;
+  margin:80px auto;
   background:white;
   border-radius:25px;
   border-collapse:collapse;
   box-shadow:0 8px 20px rgba(255,105,180,.4);
-  animation:pulse 3s infinite;
-  position:relative;
-  z-index:5;
 }
 
 th,td{
@@ -87,76 +86,81 @@ th,td{
 
 th{
   background:#ffe6f2;
-  font-size:1.2em;
 }
 
-/* ---------------- IMÁGENES CENTRALES ---------------- */
+.big-text{
+  font-size:3em;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#ff1493;
+  text-shadow:3px 3px white;
+  margin:80px 10px 30px;
+}
+
 .main-img{
-  width:160px;
-  margin:20px;
+  width:180px;
   border-radius:25px;
   box-shadow:0 8px 18px rgba(255,105,180,.5);
-  position:relative;
-  z-index:5;
 }
 
 .caption{
   font-size:1.2em;
-  margin-bottom:30px;
-  position:relative;
-  z-index:5;
-}
-
-/* ---------------- TEXTO FINAL ---------------- */
-.big-text{
-  font-size:3em;
-  font-family:Arial,Helvetica,sans-serif;
-  color:#ff1493;
-  text-shadow:3px 3px white;
-  margin:70px 10px 25px;
-  position:relative;
-  z-index:5;
-}
-
-/* ---------------- RESPONSIVE ---------------- */
-@media(max-width:600px){
-  header h1{font-size:1.7em;}
-  .big-text{font-size:2.2em;}
-  .collage img{width:130px;}
+  margin:15px 0 40px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 MÚSICA -->
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/audio/2023/03/02/audio_8f3a6c4bcb.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/audio/2023/05/09/audio_5c8c8b9c7a.mp3">
 </audio>
+
+<div class="page">
 
 <header>
   <h1>
     💕 Hablemos mi loba, hermosa, preciosa, bella, guapa,
-    única, perfecta, maravillosa, divina, increíble,
-    espectacular 💕
+    única, perfecta, maravillosa, divina, increíble 💕
   </h1>
-
   <button onclick="document.getElementById('music').play()">▶️ Play música cute</button>
   <button onclick="document.getElementById('music').pause()">⏸️ Pause</button>
 </header>
 
-<!-- -------- COLLAGE SIEMPRE VISIBLE -------- -->
+<!-- ===== COLLAGE DE IMÁGENES (TODAS VISIBLES) ===== -->
 <div class="collage">
-  <img src="https://i.pinimg.com/736x/78/8b/65/788b65368d926a323624cea432a3a891.jpg" style="top:80px; left:10px;">
-  <img src="https://i.pinimg.com/originals/ee/fb/29/eefb29cc372350678e493e09d446f940.jpg" style="top:260px; right:20px;">
-  <img src="https://i.pinimg.com/564x/ae/a8/64/aea8640235af7332f4e7f07fa1c35499.jpg" style="top:520px; left:40px;">
-  <img src="https://i.pinimg.com/564x/ff/9b/b7/ff9bb7b0f094bcc6fea1cbb8a6ab1c1f.jpg" style="top:760px; right:50px;">
-  <img src="https://i.pinimg.com/564x/2b/1c/a6/2b1ca6eeecc469d2688936cc0ccbe1f1.jpg" style="top:1050px; left:60px;">
-  <img src="https://i.pinimg.com/564x/66/95/29/669529052b1b7bcf4b3fbc7048fb74e2.jpg" style="top:1350px; right:30px;">
-  <img src="https://i.pinimg.com/564x/4f/7a/e7/4f7ae7af4b96edea3e4b3c8171f680eb.jpg" style="top:1650px; left:25px;">
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10"
+       style="top:120px; left:10px;">
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20ttF_rOdn9dE4L-29flh7lQooFx_m9QyRg&s"
+       style="top:300px; right:20px;">
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuDm_5qYTx6j62OCovNE-p0EySYgVqM8A7g&s"
+       style="top:520px; left:40px;">
+
+  <img src="https://images7.memedroid.com/images/UPLOADED699/66b10425726c4.jpeg"
+       style="top:760px; right:50px;">
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s"
+       style="top:1020px; left:30px;">
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmlON7SO6W5q4eWfCtau9PJDfHiJ01np6Lam6zyieYrA&s=10"
+       style="top:1280px; right:30px;">
+
+  <img src="https://static.wikia.nocookie.net/pucca/images/5/58/Index-3--1-.jpg/revision/latest/scale-to-width-down/340"
+       style="top:1500px; left:50px;">
+
+  <img src="https://i.pinimg.com/originals/37/8a/41/378a41878003b34352270be8b2b360c5.jpg"
+       style="top:1750px; right:40px;">
+
+  <img src="https://i.pinimg.com/736x/3d/c9/d5/3dc9d545c2e8c3a9e254222e7a551cf3.jpg"
+       style="top:2000px; left:20px;">
+
 </div>
 
-<!-- -------- TABLA -------- -->
+<!-- ===== CONTENIDO ===== -->
+<div class="content">
+
 <table>
 <tr>
 <th>🌸 Ventajas</th>
@@ -169,35 +173,33 @@ Pompompurin estará alegre 🍮<br>
 Tendrás Four Lokos ilimitadas 🍻<br>
 Te amaré más que Misa a Light 🖤<br>
 Vas a ser pro en todo lo que hagas 💪✨<br>
-Vamos a terminar el manga de Stage Love juntos 📖💕
+Vamos a terminar Stage Love juntos 📖💕
 </td>
 <td>
 Se te caerá un dedo 😨<br>
 El mundo se acaba 🌍<br>
 Hello Kitty estará triste 😿<br>
 Misa va a estar triste 🖤😢<br>
-Smiling Friends no va a sacar otra temporada 📺💔
+Smiling Friends no tendrá otra temporada 💔
 </td>
 </tr>
 </table>
 
-<!-- -------- IMAGEN CON TEXTO -------- -->
-<img class="main-img" src="https://i.pinimg.com/564x/56/af/xdgqj.jpg">
+<img class="main-img"
+src="https://i.redd.it/x0agoktumxdf1.jpeg">
 <div class="caption">
 💔 así nos ve Pompompurin cada que peleamos 💔
 </div>
 
-<!-- -------- TEXTO FINAL -------- -->
 <div class="big-text">
 💖 TEKIERO MUSHO MI LOBA 💖
 </div>
 
-<!-- -------- FINAL JOJO -------- -->
-<img class="main-img" src="https://i.pinimg.com/564x/6b/3o/4g/6b3o4grfb.jpg">
-<p style="position:relative; z-index:5;">
-💕 <b>[Jonathan Joestar](chatgpt://generic-entity?number=0)</b>
-y <b>[Erina Pendleton](chatgpt://generic-entity?number=1)</b> 💕
-</p>
+<img class="main-img"
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
+
+</div>
+</div>
 
 </body>
 </html>
