@@ -2,39 +2,23 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Hablemos mi loba 💕</title>
+<title>Hablemos mi loba 💖</title>
 
 <style>
 body{
   margin:0;
-  background: linear-gradient(135deg, #ffd6eb, #fff7cc);
-  font-family: "Comic Sans MS", cursive;
+  background: linear-gradient(135deg,#ffd6eb,#fff1b8);
+  font-family:"Comic Sans MS", cursive;
   color:#ff4d94;
   text-align:center;
   overflow-x:hidden;
 }
 
-/* ---------- ANIMACIONES ---------- */
-@keyframes floatAround{
-  0%{transform: translateY(110vh) rotate(0deg);}
-  100%{transform: translateY(-120vh) rotate(360deg);}
-}
-
-@keyframes fall{
-  to{transform: translateY(120vh);}
-}
-
-@keyframes pulse{
-  0%{transform: scale(1);}
-  50%{transform: scale(1.03);}
-  100%{transform: scale(1);}
-}
-
-/* ---------- HEADER ---------- */
+/* ---------------- HEADER ---------------- */
 header{
   background:#ffe6f2;
   padding:25px 15px;
-  box-shadow:0 5px 15px rgba(255,105,180,0.4);
+  box-shadow:0 6px 15px rgba(255,105,180,.4);
   position:relative;
   z-index:5;
 }
@@ -43,46 +27,60 @@ header h1{
   font-size:2.1em;
   color:#ff1493;
   text-shadow:3px 3px white;
-  line-height:1.3;
+  line-height:1.35;
 }
 
-/* ---------- BOTONES ---------- */
+/* ---------------- BOTONES ---------------- */
 button{
   background:#ffb6d9;
   border:none;
-  padding:12px 20px;
-  border-radius:20px;
+  padding:14px 22px;
+  border-radius:22px;
   font-size:16px;
   color:white;
   cursor:pointer;
   margin:8px;
 }
 
-/* ---------- IMÁGENES FLOTANTES (FONDO) ---------- */
-.bg-img{
-  position:fixed;
-  width:140px;
-  opacity:0.25;
+/* ---------------- COLLAGE ---------------- */
+.collage{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:2200px;
   z-index:1;
-  animation: floatAround linear infinite;
+  pointer-events:none;
 }
 
-/* ---------- TABLA ---------- */
+.collage img{
+  position:absolute;
+  width:160px;
+  border-radius:25px;
+  opacity:0.35;
+}
+
+/* ---------------- TABLA ---------------- */
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.03);}
+  100%{transform:scale(1);}
+}
+
 table{
   width:92%;
   max-width:900px;
-  margin:40px auto;
+  margin:60px auto;
   background:white;
   border-radius:25px;
   border-collapse:collapse;
-  box-shadow:0 8px 18px rgba(255,105,180,0.4);
-  overflow:hidden;
+  box-shadow:0 8px 20px rgba(255,105,180,.4);
   animation:pulse 3s infinite;
   position:relative;
   z-index:5;
 }
 
-th, td{
+th,td{
   padding:15px;
   border:2px dashed #ff99cc;
 }
@@ -92,48 +90,39 @@ th{
   font-size:1.2em;
 }
 
-/* ---------- TEXTO FINAL ---------- */
-.big-text{
-  font-size:3em;
-  font-family: Arial, Helvetica, sans-serif;
-  color:#ff1493;
-  text-shadow:3px 3px white;
-  margin:60px 10px 20px;
-  position:relative;
-  z-index:5;
-}
-
-/* ---------- IMÁGENES NORMALES ---------- */
+/* ---------------- IMÁGENES CENTRALES ---------------- */
 .main-img{
   width:160px;
-  margin:15px;
+  margin:20px;
   border-radius:25px;
-  box-shadow:0 8px 18px rgba(255,105,180,0.5);
+  box-shadow:0 8px 18px rgba(255,105,180,.5);
   position:relative;
   z-index:5;
 }
 
-/* ---------- TEXTO BAJO IMAGEN ---------- */
 .caption{
   font-size:1.2em;
-  margin-top:10px;
+  margin-bottom:30px;
   position:relative;
   z-index:5;
 }
 
-/* ---------- LLUVIA ---------- */
-.rain{
-  position:fixed;
-  top:-80px;
-  font-size:40px;
-  animation: fall 6s linear infinite;
-  z-index:4;
+/* ---------------- TEXTO FINAL ---------------- */
+.big-text{
+  font-size:3em;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#ff1493;
+  text-shadow:3px 3px white;
+  margin:70px 10px 25px;
+  position:relative;
+  z-index:5;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------------- RESPONSIVE ---------------- */
 @media(max-width:600px){
-  .big-text{font-size:2.1em;}
-  .main-img{width:130px;}
+  header h1{font-size:1.7em;}
+  .big-text{font-size:2.2em;}
+  .collage img{width:130px;}
 }
 </style>
 </head>
@@ -142,37 +131,32 @@ th{
 
 <!-- 🎵 MÚSICA -->
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_5c7b2c4c92.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/audio/2023/03/02/audio_8f3a6c4bcb.mp3" type="audio/mpeg">
 </audio>
 
 <header>
   <h1>
-    💕 Hablemos mi loba, hermosa, preciosa, bella, guapa, única,
-    perfecta, maravillosa, divina, increíble, espectacular 💕
+    💕 Hablemos mi loba, hermosa, preciosa, bella, guapa,
+    única, perfecta, maravillosa, divina, increíble,
+    espectacular 💕
   </h1>
 
-  <button onclick="document.getElementById('music').play()">▶️ Play</button>
+  <button onclick="document.getElementById('music').play()">▶️ Play música cute</button>
   <button onclick="document.getElementById('music').pause()">⏸️ Pause</button>
 </header>
 
-<!-- ---------- FONDO FLOTANTE (TUS IMÁGENES) ---------- -->
-<img class="bg-img" style="left:5%; animation-duration:22s;" src="https://i.pinimg.com/736x/78/8b/65/788b65368d926a323624cea432a3a891.jpg">
-<img class="bg-img" style="left:20%; animation-duration:26s;" src="https://i.pinimg.com/originals/ee/fb/29/eefb29cc372350678e493e09d446f940.jpg">
-<img class="bg-img" style="left:35%; animation-duration:30s;" src="https://i.pinimg.com/564x/ae/a8/64/aea8640235af7332f4e7f07fa1c35499.jpg">
-<img class="bg-img" style="left:50%; animation-duration:24s;" src="https://i.pinimg.com/564x/ff/9b/b7/ff9bb7b0f094bcc6fea1cbb8a6ab1c1f.jpg">
-<img class="bg-img" style="left:65%; animation-duration:28s;" src="https://i.pinimg.com/564x/2b/1c/a6/2b1ca6eeecc469d2688936cc0ccbe1f1.jpg">
-<img class="bg-img" style="left:80%; animation-duration:32s;" src="https://i.pinimg.com/564x/66/95/29/669529052b1b7bcf4b3fbc7048fb74e2.jpg">
-<img class="bg-img" style="left:90%; animation-duration:20s;" src="https://i.pinimg.com/564x/4f/7a/e7/4f7ae7af4b96edea3e4b3c8171f680eb.jpg">
+<!-- -------- COLLAGE SIEMPRE VISIBLE -------- -->
+<div class="collage">
+  <img src="https://i.pinimg.com/736x/78/8b/65/788b65368d926a323624cea432a3a891.jpg" style="top:80px; left:10px;">
+  <img src="https://i.pinimg.com/originals/ee/fb/29/eefb29cc372350678e493e09d446f940.jpg" style="top:260px; right:20px;">
+  <img src="https://i.pinimg.com/564x/ae/a8/64/aea8640235af7332f4e7f07fa1c35499.jpg" style="top:520px; left:40px;">
+  <img src="https://i.pinimg.com/564x/ff/9b/b7/ff9bb7b0f094bcc6fea1cbb8a6ab1c1f.jpg" style="top:760px; right:50px;">
+  <img src="https://i.pinimg.com/564x/2b/1c/a6/2b1ca6eeecc469d2688936cc0ccbe1f1.jpg" style="top:1050px; left:60px;">
+  <img src="https://i.pinimg.com/564x/66/95/29/669529052b1b7bcf4b3fbc7048fb74e2.jpg" style="top:1350px; right:30px;">
+  <img src="https://i.pinimg.com/564x/4f/7a/e7/4f7ae7af4b96edea3e4b3c8171f680eb.jpg" style="top:1650px; left:25px;">
+</div>
 
-<!-- ---------- LLUVIA INFINITA ---------- -->
-<div class="rain" style="left:10%">🐱</div>
-<div class="rain" style="left:25%">🍮</div>
-<div class="rain" style="left:40%">🎀</div>
-<div class="rain" style="left:55%">💖</div>
-<div class="rain" style="left:70%">🐺</div>
-<div class="rain" style="left:85%">✨</div>
-
-<!-- ---------- TABLA ---------- -->
+<!-- -------- TABLA -------- -->
 <table>
 <tr>
 <th>🌸 Ventajas</th>
@@ -181,7 +165,7 @@ th{
 <tr>
 <td>
 Hello Kitty estará orgullosa 🐱💗<br>
-Pompompurin estará feliz 🍮<br>
+Pompompurin estará alegre 🍮<br>
 Tendrás Four Lokos ilimitadas 🍻<br>
 Te amaré más que Misa a Light 🖤<br>
 Vas a ser pro en todo lo que hagas 💪✨<br>
@@ -190,29 +174,29 @@ Vamos a terminar el manga de Stage Love juntos 📖💕
 <td>
 Se te caerá un dedo 😨<br>
 El mundo se acaba 🌍<br>
-Hello Kitty llora 😿<br>
+Hello Kitty estará triste 😿<br>
 Misa va a estar triste 🖤😢<br>
 Smiling Friends no va a sacar otra temporada 📺💔
 </td>
 </tr>
 </table>
 
-<!-- ---------- IMAGEN CON TEXTO ---------- -->
+<!-- -------- IMAGEN CON TEXTO -------- -->
 <img class="main-img" src="https://i.pinimg.com/564x/56/af/xdgqj.jpg">
 <div class="caption">
 💔 así nos ve Pompompurin cada que peleamos 💔
 </div>
 
-<!-- ---------- TEXTO FINAL ---------- -->
+<!-- -------- TEXTO FINAL -------- -->
 <div class="big-text">
 💖 TEKIERO MUSHO MI LOBA 💖
 </div>
 
-<!-- ---------- FINAL JOJO ---------- -->
+<!-- -------- FINAL JOJO -------- -->
 <img class="main-img" src="https://i.pinimg.com/564x/6b/3o/4g/6b3o4grfb.jpg">
-<p>
-💕 <b>[Jonathan Joestar](chatgpt://generic-entity?number=0)</b> y
-<b>[Erina Pendleton](chatgpt://generic-entity?number=1)</b> 💕
+<p style="position:relative; z-index:5;">
+💕 <b>[Jonathan Joestar](chatgpt://generic-entity?number=0)</b>
+y <b>[Erina Pendleton](chatgpt://generic-entity?number=1)</b> 💕
 </p>
 
 </body>
