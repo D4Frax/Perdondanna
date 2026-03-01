@@ -14,16 +14,29 @@ body{
   overflow-x:hidden;
 }
 
-@keyframes float {
-  0%{transform: translateY(0);}
-  50%{transform: translateY(-15px);}
-  100%{transform: translateY(0);}
+/* ---------- ANIMACIONES ---------- */
+@keyframes floatAround{
+  0%{transform: translateY(110vh) rotate(0deg);}
+  100%{transform: translateY(-120vh) rotate(360deg);}
 }
 
+@keyframes fall{
+  to{transform: translateY(120vh);}
+}
+
+@keyframes pulse{
+  0%{transform: scale(1);}
+  50%{transform: scale(1.03);}
+  100%{transform: scale(1);}
+}
+
+/* ---------- HEADER ---------- */
 header{
   background:#ffe6f2;
   padding:25px 15px;
   box-shadow:0 5px 15px rgba(255,105,180,0.4);
+  position:relative;
+  z-index:5;
 }
 
 header h1{
@@ -33,6 +46,7 @@ header h1{
   line-height:1.3;
 }
 
+/* ---------- BOTONES ---------- */
 button{
   background:#ffb6d9;
   border:none;
@@ -41,16 +55,19 @@ button{
   font-size:16px;
   color:white;
   cursor:pointer;
+  margin:8px;
 }
 
-img{
-  width:160px;
-  margin:15px;
-  border-radius:25px;
-  box-shadow:0 8px 18px rgba(255,105,180,0.5);
-  animation: float 3s infinite;
+/* ---------- IMÁGENES FLOTANTES (FONDO) ---------- */
+.bg-img{
+  position:fixed;
+  width:140px;
+  opacity:0.25;
+  z-index:1;
+  animation: floatAround linear infinite;
 }
 
+/* ---------- TABLA ---------- */
 table{
   width:92%;
   max-width:900px;
@@ -60,6 +77,9 @@ table{
   border-collapse:collapse;
   box-shadow:0 8px 18px rgba(255,105,180,0.4);
   overflow:hidden;
+  animation:pulse 3s infinite;
+  position:relative;
+  z-index:5;
 }
 
 th, td{
@@ -72,29 +92,55 @@ th{
   font-size:1.2em;
 }
 
+/* ---------- TEXTO FINAL ---------- */
 .big-text{
   font-size:3em;
   font-family: Arial, Helvetica, sans-serif;
   color:#ff1493;
   text-shadow:3px 3px white;
   margin:60px 10px 20px;
+  position:relative;
+  z-index:5;
 }
 
+/* ---------- IMÁGENES NORMALES ---------- */
+.main-img{
+  width:160px;
+  margin:15px;
+  border-radius:25px;
+  box-shadow:0 8px 18px rgba(255,105,180,0.5);
+  position:relative;
+  z-index:5;
+}
+
+/* ---------- TEXTO BAJO IMAGEN ---------- */
 .caption{
   font-size:1.2em;
   margin-top:10px;
+  position:relative;
+  z-index:5;
 }
 
+/* ---------- LLUVIA ---------- */
+.rain{
+  position:fixed;
+  top:-80px;
+  font-size:40px;
+  animation: fall 6s linear infinite;
+  z-index:4;
+}
+
+/* ---------- RESPONSIVE ---------- */
 @media(max-width:600px){
-  img{width:130px;}
   .big-text{font-size:2.1em;}
+  .main-img{width:130px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🎵 SONIDO CUTE -->
+<!-- 🎵 MÚSICA -->
 <audio id="music" loop>
   <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_5c7b2c4c92.mp3" type="audio/mpeg">
 </audio>
@@ -105,21 +151,28 @@ th{
     perfecta, maravillosa, divina, increíble, espectacular 💕
   </h1>
 
-  <button onclick="document.getElementById('music').play()">
-    🎀 Activar musiquita cute 🎀
-  </button>
+  <button onclick="document.getElementById('music').play()">▶️ Play</button>
+  <button onclick="document.getElementById('music').pause()">⏸️ Pause</button>
 </header>
 
-<!-- IMÁGENES DESORDENADAS (TODAS LAS QUE MANDASTE) -->
-<img src="https://i.pinimg.com/736x/78/8b/65/788b65368d926a323624cea432a3a891.jpg">
-<img src="https://i.pinimg.com/originals/ee/fb/29/eefb29cc372350678e493e09d446f940.jpg">
-<img src="https://pin.it/60QaVDzNx">
-<img src="https://pin.it/55gNJK3Pq">
-<img src="https://pin.it/28fc4z344">
-<img src="https://pin.it/MNFAo6Xc7">
-<img src="https://pin.it/103nJf9Ia">
+<!-- ---------- FONDO FLOTANTE (TUS IMÁGENES) ---------- -->
+<img class="bg-img" style="left:5%; animation-duration:22s;" src="https://i.pinimg.com/736x/78/8b/65/788b65368d926a323624cea432a3a891.jpg">
+<img class="bg-img" style="left:20%; animation-duration:26s;" src="https://i.pinimg.com/originals/ee/fb/29/eefb29cc372350678e493e09d446f940.jpg">
+<img class="bg-img" style="left:35%; animation-duration:30s;" src="https://i.pinimg.com/564x/ae/a8/64/aea8640235af7332f4e7f07fa1c35499.jpg">
+<img class="bg-img" style="left:50%; animation-duration:24s;" src="https://i.pinimg.com/564x/ff/9b/b7/ff9bb7b0f094bcc6fea1cbb8a6ab1c1f.jpg">
+<img class="bg-img" style="left:65%; animation-duration:28s;" src="https://i.pinimg.com/564x/2b/1c/a6/2b1ca6eeecc469d2688936cc0ccbe1f1.jpg">
+<img class="bg-img" style="left:80%; animation-duration:32s;" src="https://i.pinimg.com/564x/66/95/29/669529052b1b7bcf4b3fbc7048fb74e2.jpg">
+<img class="bg-img" style="left:90%; animation-duration:20s;" src="https://i.pinimg.com/564x/4f/7a/e7/4f7ae7af4b96edea3e4b3c8171f680eb.jpg">
 
-<!-- TABLA (SE MANTIENE) -->
+<!-- ---------- LLUVIA INFINITA ---------- -->
+<div class="rain" style="left:10%">🐱</div>
+<div class="rain" style="left:25%">🍮</div>
+<div class="rain" style="left:40%">🎀</div>
+<div class="rain" style="left:55%">💖</div>
+<div class="rain" style="left:70%">🐺</div>
+<div class="rain" style="left:85%">✨</div>
+
+<!-- ---------- TABLA ---------- -->
 <table>
 <tr>
 <th>🌸 Ventajas</th>
@@ -144,22 +197,19 @@ Smiling Friends no va a sacar otra temporada 📺💔
 </tr>
 </table>
 
-<!-- IMAGEN CON TEXTO ESPECÍFICO -->
-<div>
-  <img src="https://pin.it/56afXdgqj">
-  <div class="caption">
-    💔 así nos ve Pompompurin cada que peleamos 💔
-  </div>
+<!-- ---------- IMAGEN CON TEXTO ---------- -->
+<img class="main-img" src="https://i.pinimg.com/564x/56/af/xdgqj.jpg">
+<div class="caption">
+💔 así nos ve Pompompurin cada que peleamos 💔
 </div>
 
-<!-- TEXTO FINAL -->
+<!-- ---------- TEXTO FINAL ---------- -->
 <div class="big-text">
 💖 TEKIERO MUSHO MI LOBA 💖
 </div>
 
-<!-- FINAL: JONATHAN Y ERINA -->
-<img src="https://pin.it/6B3O4GrfB">
-
+<!-- ---------- FINAL JOJO ---------- -->
+<img class="main-img" src="https://i.pinimg.com/564x/6b/3o/4g/6b3o4grfb.jpg">
 <p>
 💕 <b>[Jonathan Joestar](chatgpt://generic-entity?number=0)</b> y
 <b>[Erina Pendleton](chatgpt://generic-entity?number=1)</b> 💕
