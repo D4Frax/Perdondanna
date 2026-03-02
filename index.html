@@ -9,10 +9,10 @@ html, body {
   margin:0;
   padding:0;
   width:100%;
-  height:100%;
-  overflow:hidden;
+  min-height:100%;
   font-family:"Comic Sans MS", cursive;
   background:linear-gradient(135deg,#ffd6eb,#fff0c9);
+  overflow-y: scroll; /* 🔹 permitir scroll leve */
 }
 
 /* HEADER */
@@ -48,11 +48,11 @@ button{
   100% {transform: translateY(100vh);}
 }
 
-/* COLLAGE ABSOLUTO */
+/* COLLAGE */
 .collage{
   position:relative;
   width:100%;
-  height:100%;
+  min-height:150vh; /* 🔹 permite scroll leve */
 }
 .collage img{
   position:absolute;
@@ -62,31 +62,29 @@ button{
   box-shadow:0 4px 10px rgba(255,105,180,.5);
 }
 
-/* CONTENIDO CENTRAL */
+/* CONTENIDO */
 .content{
-  position:absolute;
-  top:20%;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:5;
+  position:relative;
+  margin-top:20px;
   text-align:center;
   width:90%;
   max-width:900px;
+  z-index:5;
 }
 
 table{
   width:100%;
-  background:white;
+  background: rgba(255, 255, 255, 0.2); /* 🔹 transparente */
   border-radius:20px;
   border-collapse:collapse;
-  box-shadow:0 6px 16px rgba(255,105,180,.4);
+  box-shadow:0 6px 16px rgba(255,105,180,.3);
 }
 th, td{
   padding:12px;
   border:2px dashed #ff99cc;
 }
 th{
-  background:#ffe6f2;
+  background: rgba(255,230,242,0.3); /* 🔹 transparente */
 }
 
 .big-text{
@@ -135,18 +133,17 @@ th{
 
 <!-- COLLAGE -->
 <div class="collage">
-  <!-- Distribuidas por toda la página -->
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s" style="top:5%; left:5%;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20ttF_rOdn9dE4L-29flh7lQooFx_m9QyRg&s" style="top:15%; left:70%;">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuDm_5qYTx6j62OCovNE-p0EySYgVqM8A7g&s" style="top:35%; left:10%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20ttF_rOdn9dE4L-29flh7lQooFx_m9QyRg&s" style="top:10%; left:70%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuDm_5qYTx6j62OCovNE-p0EySYgVqM8A7g&s" style="top:30%; left:10%;">
   <img src="https://images7.memedroid.com/images/UPLOADED699/66b10425726c4.jpeg" style="top:50%; left:40%;">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s" style="top:65%; left:55%;">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmlON7SO6W5q4eWfCtau9PJDfHiJ01np6Lam6zyieYrA&s=10" style="top:20%; left:25%;">
   <img src="https://static.wikia.nocookie.net/pucca/images/5/58/Index-3--1-.jpg" style="top:45%; left:70%;">
   <img src="https://i.pinimg.com/originals/37/8a/41/378a41878003b34352270be8b2b360c5.jpg" style="top:10%; left:40%;">
   <img src="https://i.pinimg.com/736x/3d/c9/d5/3dc9d545c2e8c3a9e254222e7a551cf3.jpg" style="top:55%; left:10%;">
-  <img src="https://i.redd.it/x0agoktumxdf1.jpeg" style="top:30%; left:50%;"> <!-- Pum Pum Brín -->
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s" style="top:70%; left:20%;">
+  <img src="https://i.redd.it/x0agoktumxdf1.jpeg" style="top:35%; left:50%;"> <!-- Pum Pum Brín -->
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s" style="top:75%; left:20%;">
 </div>
 
 <!-- CONTENIDO -->
@@ -169,8 +166,7 @@ th{
         Se te caerá un dedo 😨<br>
         El mundo se acaba 🌍<br>
         Hello Kitty estará triste 😿<br>
-        Misa va a estar triste 🖤😢<br>
-        Smiling Friends no tendrá otra temporada 💔
+        Misa va a estar triste 🖤😢
       </td>
     </tr>
   </table>
