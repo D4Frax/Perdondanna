@@ -1,116 +1,201 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hablemos mi loba 💖</title>
-
 <style>
-html, body{
+/* ===== GENERAL ===== */
+html, body {
   margin:0;
   padding:0;
+  width:100%;
   height:100%;
   overflow:hidden;
+  font-family:"Comic Sans MS", cursive;
+  background:linear-gradient(135deg,#ffd6eb,#fff0c9);
 }
 
-body{
-  background:linear-gradient(135deg,#ffd6eb,#fff0c9);
-  font-family:"Comic Sans MS", cursive;
-  display:flex;
-  flex-direction:column;
+/* ===== HEADER ===== */
+header {
+  background:#ffe6f2;
+  padding:10px;
+  box-shadow:0 4px 12px rgba(255,105,180,.4);
   text-align:center;
 }
-
-/* HEADER */
-header{
-  background:#ffe6f2;
-  padding:8px;
-  box-shadow:0 3px 8px rgba(255,105,180,.4);
-}
-
-header h1{
-  font-size:1em;
+header h1 {
+  font-size:1.2em;
   color:#ff1493;
-  margin:4px 0;
+  margin:0;
 }
-
-/* BOTONES */
 button{
   background:#ffb6d9;
   border:none;
+  border-radius:20px;
   padding:6px 12px;
-  border-radius:18px;
-  font-size:12px;
+  margin:4px;
   color:white;
-  margin:3px;
+  font-size:12px;
 }
 
-/* COLLAGE */
-.collage-grid{
-  flex:1;
-  display:grid;
-  grid-template-columns: repeat(4, 1fr); /* 🔹 más columnas = imágenes más pequeñas */
-  grid-template-rows: repeat(4, 1fr);
-  gap:5px;
-  padding:5px;
+/* ===== EMOJIS CAYENDO ===== */
+.emoji{
+  position:absolute;
+  font-size:24px;
+  animation:fall 6s linear infinite;
+}
+@keyframes fall {
+  0% {transform: translateY(-50px);}
+  100% {transform: translateY(100vh);}
 }
 
-.collage-grid img{
+/* ===== COLLAGE ===== */
+.collage{
+  position:relative;
   width:100%;
   height:100%;
-  object-fit:contain; /* 🔹 evita que se vean enormes */
-  border-radius:14px;
-  background:#fff5fa;
-  box-shadow:0 4px 10px rgba(255,105,180,.35);
+}
+.collage img{
+  position:absolute;
+  width:180px;
+  height:auto;
+  border-radius:20px;
+  box-shadow:0 4px 10px rgba(255,105,180,.5);
 }
 
-/* TEXTO FINAL */
+/* ===== CONTENIDO ===== */
+.content{
+  position:absolute;
+  top:10%;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+  text-align:center;
+  width:90%;
+  max-width:1000px;
+}
+
+table{
+  width:100%;
+  background:white;
+  border-radius:20px;
+  border-collapse:collapse;
+  box-shadow:0 6px 16px rgba(255,105,180,.4);
+}
+th, td{
+  padding:12px;
+  border:2px dashed #ff99cc;
+}
+th{
+  background:#ffe6f2;
+}
+
+/* ===== TEXTO FINAL ===== */
 .big-text{
-  font-size:1.3em;
-  font-family:Arial, Helvetica, sans-serif;
+  font-size:2em;
   color:#ff1493;
   text-shadow:2px 2px white;
-  padding:6px;
+  margin-top:20px;
+}
+.caption{
+  margin-top:8px;
+  font-size:1em;
+}
+
+/* ===== IMAGEN FINAL ===== */
+.final-img{
+  width:200px;
+  border-radius:20px;
+  margin-top:15px;
+  box-shadow:0 6px 16px rgba(255,105,180,.5);
 }
 </style>
 </head>
-
 <body>
 
 <!-- MÚSICA -->
 <audio id="music" loop>
   <source src="https://cdn.pixabay.com/audio/2023/05/09/audio_5c8c8b9c7a.mp3" type="audio/mpeg">
 </audio>
-
 <header>
-  <h1>
-    💕 Hablemos mi loba, hermosa, preciosa, bella, guapa, única 💕
-  </h1>
-  <button onclick="document.getElementById('music').play()">▶️ Música cute</button>
+  <h1>💕 Hablemos mi loba, hermosa, preciosa, bella, guapa, única, perfecta 💕</h1>
+  <button onclick="document.getElementById('music').play()">▶️ Play música cute</button>
   <button onclick="document.getElementById('music').pause()">⏸️ Pausar</button>
 </header>
 
-<!-- IMÁGENES -->
-<div class="collage-grid">
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20ttF_rOdn9dE4L-29flh7lQooFx_m9QyRg&s">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuDm_5qYTx6j62OCovNE-p0EySYgVqM8A7g&s">
-<img src="https://images7.memedroid.com/images/UPLOADED699/66b10425726c4.jpeg">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmlON7SO6W5q4eWfCtau9PJDfHiJ01np6Lam6zyieYrA&s=10">
-<img src="https://static.wikia.nocookie.net/pucca/images/5/58/Index-3--1-.jpg">
-<img src="https://i.pinimg.com/originals/37/8a/41/378a41878003b34352270be8b2b360c5.jpg">
-<img src="https://i.pinimg.com/736x/3d/c9/d5/3dc9d545c2e8c3a9e254222e7a551cf3.jpg">
-<img src="https://i.redd.it/x0agoktumxdf1.jpeg">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
-
+<!-- EMOJIS CAEN -->
+<div id="emojis">
+  <div class="emoji" style="left:5%">💖</div>
+  <div class="emoji" style="left:15%">💗</div>
+  <div class="emoji" style="left:25%">💕</div>
+  <div class="emoji" style="left:35%">💝</div>
+  <div class="emoji" style="left:45%">💘</div>
+  <div class="emoji" style="left:55%">💓</div>
+  <div class="emoji" style="left:65%">💞</div>
+  <div class="emoji" style="left:75%">💟</div>
+  <div class="emoji" style="left:85%">💖</div>
 </div>
 
-<div class="big-text">
-💖 TEKIERO MUSHO MI LOBA 💖
+<!-- COLLAGE DE IMÁGENES -->
+<div class="collage">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s" style="top:10%; left:5%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20ttF_rOdn9dE4L-29flh7lQooFx_m9QyRg&s" style="top:30%; left:70%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuDm_5qYTx6j62OCovNE-p0EySYgVqM8A7g&s" style="top:60%; left:10%;">
+  <img src="https://images7.memedroid.com/images/UPLOADED699/66b10425726c4.jpeg" style="top:20%; left:40%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s" style="top:50%; left:55%;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmlON7SO6W5q4eWfCtau9PJDfHiJ01np6Lam6zyieYrA&s=10" style="top:70%; left:75%;">
+  <img src="https://static.wikia.nocookie.net/pucca/images/5/58/Index-3--1-.jpg" style="top:15%; left:20%;">
+  <img src="https://i.pinimg.com/originals/37/8a/41/378a41878003b34352270be8b2b360c5.jpg" style="top:35%; left:5%;">
+  <img src="https://i.pinimg.com/736x/3d/c9/d5/3dc9d545c2e8c3a9e254222e7a551cf3.jpg" style="top:60%; left:35%;">
+  <img src="https://i.redd.it/x0agoktumxdf1.jpeg" style="top:50%; left:25%;"> <!-- Pum Pum Brín -->
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s" style="top:75%; left:50%;">
 </div>
+
+<!-- CONTENIDO -->
+<div class="content">
+  <table>
+    <tr>
+      <th>🌸 Ventajas</th>
+      <th>💀 Desventajas</th>
+    </tr>
+    <tr>
+      <td>
+        Hello Kitty estará orgullosa 🐱💗<br>
+        Pompompurin estará alegre 🍮<br>
+        Tendrás Four Lokos ilimitadas 🍻<br>
+        Te amaré más que Misa a Light 🖤<br>
+        Vas a ser pro en todo lo que hagas 💪✨<br>
+        Vamos a terminar Stage Love juntos 📖💕
+      </td>
+      <td>
+        Se te caerá un dedo 😨<br>
+        El mundo se acaba 🌍<br>
+        Hello Kitty estará triste 😿<br>
+        Misa va a estar triste 🖤😢<br>
+        Smiling Friends no tendrá otra temporada 💔
+      </td>
+    </tr>
+  </table>
+
+  <div class="caption">
+    💔 Así nos ve Pum Pum Brín cada que peleamos 💔
+  </div>
+
+  <div class="big-text">
+    💖 TEKIERO MUSHO MI LOBA 💖
+  </div>
+
+  <img class="final-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s">
+</div>
+
+<script>
+// RANDOMIZAR ANIMACIÓN EMOJIS
+let emojis = document.querySelectorAll(".emoji");
+emojis.forEach((e)=>{
+  e.style.animationDuration = (Math.random()*3 + 3) + "s";
+  e.style.fontSize = (Math.random()*20 + 20) + "px";
+});
+</script>
 
 </body>
-</html> 
+</html>
