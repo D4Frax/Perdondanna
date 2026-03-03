@@ -3,111 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Hablemos mi loba</title>
 
-<!-- Fuente estilo Death Note -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:"Comic Sans MS", cursive;
-  background:linear-gradient(135deg,#ffd6eb,#fff0c9);
+  padding:0;
+  font-family:'Baloo 2', cursive;
+  background:linear-gradient(180deg,#ffd6e8,#fff0f7);
+  overflow-x:hidden;
 }
 
 /* TÍTULO */
 h1{
   text-align:center;
-  color:#ff1493;
-  padding:15px;
+  font-size:2.2rem;
+  color:#ff4f9a;
+  margin:20px 10px;
 }
 
-/* CHART */
-table{
-  width:90%;
-  margin:20px auto;
-  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfOif0hc34ICJ9TlDom7-W_wAqOrUMZL4q5AFPKaQcMf3Kbbi2HKYFEczh&s=10");
+/* TABLA */
+.table-container{
+  background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfOif0hc34ICJ9TlDom7-W_wAqOrUMZL4q5AFPKaQcMf3Kbbi2HKYFEczh&s=10");
   background-size:cover;
   background-position:center;
+  margin:15px;
+  padding:15px;
   border-radius:20px;
-  border-collapse:collapse;
-  font-family:'Cinzel', serif; /* Death Note vibe */
 }
 
-th, td{
-  border:2px solid rgba(0,0,0,0.4);
-  padding:14px;
-  background:rgba(255,255,255,0.75); /* para que se lea */
+table{
+  width:100%;
+  background:rgba(255,255,255,0.75);
+  border-radius:15px;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:12px;
+  vertical-align:top;
+  font-size:0.95rem;
 }
 
 th{
-  font-weight:700;
-  font-size:1.1em;
+  color:#ff4f9a;
+  font-size:1.1rem;
 }
 
 /* COLLAGE */
 .collage{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
-  gap:38px; /* 1 cm */
-  width:90%;
-  margin:40px auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
 .collage img{
-  width:100%;
-  border-radius:20px;
-  box-shadow:0 4px 10px rgba(255,105,180,.4);
+  max-width:85%;
+  border-radius:18px;
+  margin:40px 0; /* ~1cm visual */
 }
 
-/* TEXTO */
-.caption{
+/* TEXTO ESPECIAL */
+.texto-especial{
   text-align:center;
+  font-size:1.2rem;
+  color:#ff5fa2;
   margin-top:10px;
-  font-size:1em;
 }
 
-.big-text{
+/* TEXTO FINAL */
+.final-text{
   text-align:center;
-  font-size:2em;
-  color:#ff1493;
-  margin:40px 0 20px;
-  font-family:'Cinzel', serif;
-}
-
-/* FINAL */
-.final-img{
-  display:block;
-  margin:0 auto 40px;
-  width:220px;
-  border-radius:20px;
-  box-shadow:0 6px 16px rgba(255,105,180,.5);
+  font-size:2.3rem;
+  color:#ff3d8f;
+  margin:40px 10px 20px;
 }
 
 /* EMOJIS CAYENDO */
 .emoji{
   position:fixed;
-  top:-40px;
-  animation:fall 6s linear infinite;
-  font-size:24px;
+  top:-50px;
+  animation:fall linear infinite;
+  font-size:22px;
+  opacity:0.8;
 }
+
 @keyframes fall{
-  to{ transform:translateY(110vh); }
+  to{
+    transform:translateY(110vh);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/audio/2023/05/09/audio_5c8c8b9c7a.mp3">
+<!-- MÚSICA CUTE -->
+<audio autoplay loop playsinline>
+  <source src="https://files.catbox.moe/1g1z3k.mp3" type="audio/mpeg">
 </audio>
 
 <h1>
-Hablemos mi loba, hermosa, preciosa, bella, guapa, única, invalorable,
-maravillosa, perfecta, extraordinaria
+Hablemos mi loba, hermosa, bella, preciosa, única, inigualable, increíble,
+maravillosa, valiosa, especial, perfecta, inolvidable
 </h1>
 
+<div class="table-container">
 <table>
 <tr>
 <th>Ventajas</th>
@@ -115,50 +119,58 @@ maravillosa, perfecta, extraordinaria
 </tr>
 <tr>
 <td>
-Hello Kitty estará orgullosa<br>
-Pompompurin estará alegre<br>
-Tendrás four lokos ilimitadas<br>
-Te amaré más que Misa a Light<br>
-Vas a ser pro en todo lo que hagas<br>
-Vamos a terminar Stage Love juntos
+• Hello Kitty estará orgullosa.<br>
+• Pompompurin estará alegre.<br>
+• Tendrás four lokos ilimitadas.<br>
+• Te amaré más que Misa a Light.<br>
+• Vas a ser pro en todo lo que hagas.<br>
+• Vamos a terminar Stage Love juntos.
 </td>
 <td>
-Se te caerá un dedo<br>
-El mundo se acaba<br>
-Hello Kitty estará triste<br>
-Misa va a estar triste
+• Se te caerá un dedo.<br>
+• El mundo se acaba.<br>
+• Hello Kitty estará triste.<br>
+• Misa va a estar triste.
 </td>
 </tr>
 </table>
+</div>
 
 <div class="collage">
 
-<div>
 <img src="https://i.redd.it/x0agoktumxdf1.jpeg">
-<div class="caption">Así nos ve Pompompurin cada que peleamos</div>
-</div>
+<div class="texto-especial">💔 Así nos ve Pompompurin cuando peleamos 💔</div>
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20ttF_rOdn9dE4L-29flh7lQooFx_m9QyRg&s">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyuDm_5qYTx6j62OCovNE-p0EySYgVqM8A7g&s">
 <img src="https://images7.memedroid.com/images/UPLOADED699/66b10425726c4.jpeg">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsbXwP7IP34QBDzaBnCbLYXLBDdTIeyE9R0g&s">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmlON7SO6W5q4eWfCtau9PJDfHiJ01np6Lam6zyieYrA&s=10">
-<img src="https://static.wikia.nocookie.net/pucca/images/5/58/Index-3--1-.jpg">
+<img src="https://static.wikia.nocookie.net/pucca/images/5/58/Index-3--1-.jpg/revision/latest/scale-to-width-down/340">
 <img src="https://i.pinimg.com/originals/37/8a/41/378a41878003b34352270be8b2b360c5.jpg">
 <img src="https://i.pinimg.com/736x/3d/c9/d5/3dc9d545c2e8c3a9e254222e7a551cf3.jpg">
 
 </div>
 
-<div class="big-text">TEKIERO MUSHO MI LOBA</div>
+<div class="final-text">
+TEKIERO MUSHO MI LOBA
+</div>
 
-<img class="final-img"
-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s">
+<div class="collage">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tE8goV2wq8Q7WLb_rKllO9otemsorLYlUyfFnLflRXb7UeH23e8aVlc&s=10">
+</div>
 
-<!-- EMOJIS -->
-<div class="emoji" style="left:10%">💖</div>
-<div class="emoji" style="left:30%">💕</div>
-<div class="emoji" style="left:50%">💗</div>
-<div class="emoji" style="left:70%">💞</div>
+<script>
+const emojis = ["💖","🎀","🐶","🐰","🍓"];
+for(let i=0;i<25;i++){
+  let e=document.createElement("div");
+  e.className="emoji";
+  e.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.left=Math.random()*100+"vw";
+  e.style.animationDuration=5+Math.random()*5+"s";
+  document.body.appendChild(e);
+}
+</script>
 
 </body>
 </html>
